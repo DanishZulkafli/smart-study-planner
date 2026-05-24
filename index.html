@@ -3,44 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Smart Study Planner</title>
+  <title>AI Personal Finance Coach</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main class="app">
-    <section class="planner-card">
-      <h1>📚 Smart Study Planner</h1>
-      <p class="subtitle">
-        Plan your study tasks based on priority, duration, and focus level.
+    <section class="hero">
+      <span class="tag">AI Portfolio Project</span>
+      <h1>AI Personal Finance Coach</h1>
+      <p>
+        Analyze your monthly income, expenses, and savings goal to receive
+        AI-style budgeting insights and financial improvement suggestions.
       </p>
+    </section>
 
-      <div class="form-group">
-        <label for="taskName">Study Task</label>
-        <input type="text" id="taskName" placeholder="Example: Revise JavaScript basics" />
+    <section class="layout">
+      <div class="card">
+        <h2>Monthly Finance Details</h2>
+
+        <label for="income">Monthly Income</label>
+        <input type="number" id="income" placeholder="Example: 3200" />
+
+        <label for="rent">Rent / Housing</label>
+        <input type="number" id="rent" placeholder="Example: 800" />
+
+        <label for="food">Food & Groceries</label>
+        <input type="number" id="food" placeholder="Example: 600" />
+
+        <label for="transport">Transport</label>
+        <input type="number" id="transport" placeholder="Example: 250" />
+
+        <label for="bills">Bills & Utilities</label>
+        <input type="number" id="bills" placeholder="Example: 300" />
+
+        <label for="entertainment">Entertainment / Lifestyle</label>
+        <input type="number" id="entertainment" placeholder="Example: 250" />
+
+        <label for="others">Other Expenses</label>
+        <input type="number" id="others" placeholder="Example: 200" />
+
+        <label for="savingGoal">Monthly Saving Goal</label>
+        <input type="number" id="savingGoal" placeholder="Example: 500" />
+
+        <button onclick="analyzeFinance()">Analyze My Budget</button>
+        <button class="secondary" onclick="loadDemo()">Load Demo Data</button>
+        <button class="danger" onclick="clearHistory()">Clear History</button>
       </div>
 
-      <div class="form-group">
-        <label for="priority">Priority</label>
-        <select id="priority">
-          <option value="High">High Priority</option>
-          <option value="Medium">Medium Priority</option>
-          <option value="Low">Low Priority</option>
-        </select>
+      <div class="card result-card">
+        <h2>Finance Analysis</h2>
+        <div id="result" class="empty">
+          Fill in your monthly details and generate your finance analysis.
+        </div>
       </div>
+    </section>
 
-      <div class="form-group">
-        <label for="duration">Study Duration</label>
-        <select id="duration">
-          <option value="25">25 minutes</option>
-          <option value="45">45 minutes</option>
-          <option value="60">1 hour</option>
-          <option value="90">1 hour 30 minutes</option>
-        </select>
-      </div>
-
-      <button onclick="generatePlan()">Generate Study Plan</button>
-
-      <div id="result" class="result hidden"></div>
+    <section class="card history-card">
+      <h2>Analysis History</h2>
+      <div id="history"></div>
     </section>
   </main>
 
